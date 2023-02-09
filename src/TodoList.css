@@ -1,0 +1,6 @@
+.listContainer{
+    display: flex;
+}
+.Checked{
+    text-decoration:line-through;
+}
