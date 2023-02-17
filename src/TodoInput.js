@@ -1,15 +1,20 @@
-import React from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
-const TodoInput = (props) => {
-    let inputValue = ''
+const TodoInput = ({addTodo}) => {
+    const [value, setValue] = useState('');
     function send(){
-        props.addTodo(inputValue)
-        document.getElementById('input').value = ''
+        addTodo(value)
+        setValue('')
     }
+    useEffect(() => {
+        console.log('hello')
+    }, [])
+    const ref = useRef("")
     return (
         <div>
-            <input id="input" onChange={(e)=>{inputValue = e.target.value}}/>
+            <input ref={ref} onChange={(e)=>{setValue(e.target.value)}} value={value}/>
             <button onClick={send}>add</button>
+            {ref.current.value}
         </div>
     );
 }

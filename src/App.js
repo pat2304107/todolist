@@ -4,19 +4,24 @@ import TodoPage from './TodoPage';
 import React from 'react'
 
 function App(){
-  function addTodo(todo){
-    setNewTodo(arr => [todo, ...arr])
+  const [todos, setTodos] = useState([]);
+
+  const addTodo = (todo) => {
+    setTodos(arr => [{
+      title: todo,
+      checked: false,
+      uuid: window.crypto.randomUUID(),
+    }, ...arr]);
   }
-  function remove(index){
-      const oldItems = newTodo 
-      const newItems = oldItems.slice(0,index).concat(oldItems.slice(index+1))
-      setNewTodo(newItems) 
+
+  const remove = (id) => {
+    setTodos(cur => cur.filter(todo => todo.uuid !== id))
   }
-  const [newTodo, setNewTodo] = useState([]);
+
   return(
     <div>
       <TodoInput addTodo={addTodo}/>
-      <TodoPage newTodo={newTodo} remove={remove}/>
+      <TodoPage todos={todos} remove={remove} setTodos={setTodos}/>
     </div>
   )
 }
