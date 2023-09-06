@@ -19,7 +19,7 @@ function App(){
   }
 
   return(
-    <div>
+    <div className='font-inter'>
       <TodoInput addTodo={addTodo}/>
       <TodoPage todos={todos} remove={remove} setTodos={setTodos}/>
     </div>

@@ -15,7 +15,7 @@ const TodoList = ({todo, remove, setTodos}) => {
     }
     const titleHandler = () => {
         if(isSave){
-            return <div className={checked ? "Checked": ""}>{title}</div>
+            return <div className={`pl-3 ${checked ? "text-lightgray50": "text-lightgray10"}`}>{title}</div>
         } else {
             return <input value={title} onChange={e => valueHandler(e.target.value)}></input>
         }
@@ -34,17 +34,17 @@ const TodoList = ({todo, remove, setTodos}) => {
     }
 
     const editBtn=() => {
-        return (isSave ? 'edit' : 'save')
+        return (isSave ? '' : '')
     }
 
 
 
     return (
-        <div className='listContainer'>
-            <input type="checkbox" onChange={e => checkHandler(uuid)} checked={checked}></input>
-            {titleHandler()}
-            <button onClick={e => remove(uuid)}>delete</button>
-            <button onClick={e => editHandler()}>{editBtn()}</button>
+        <div className='mx-auto w-238_5 flex text-lightgray10 border-1 border-white'>
+            <input className={`w-7_5 h-7_5 bg-lightgray100 border-2 border-white appearance-none ${checked === true ? 'checked' : ''}`} type="checkbox" onChange={e => checkHandler(uuid)} checked={checked}></input>
+            <div className='w-216 h-7_5 bg-lightgray100 border-2 border-white'>{titleHandler()}</div>
+            <button className=' w-7_5 h-7_5 bg-lightgray100 border-2 border-white edit'  onClick={e => editHandler()}>{editBtn()}</button>
+            <button className=' w-7_5 h-7_5 bg-lightgray100 border-2 border-white delete' onClick={e => remove(uuid)}></button>
         </div>
     );
 }

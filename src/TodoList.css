@@ -1,6 +1,18 @@
 .listContainer{
     display: flex;
 }
-.Checked{
-    text-decoration:line-through;
+.checked{
+    background-image: url('./assets/img/checked.svg');
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.delete{
+    background-image: url('./assets/img/delete.svg');
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.edit{
+    background-image: url('./assets/img/edit.svg');
+    background-repeat:no-repeat;
+    background-position: center;
 }
