@@ -1,6 +1,3 @@
-.listContainer{
-    display: flex;
-}
 .checked{
     background-image: url('./assets/img/checked.svg');
     background-repeat:no-repeat;
@@ -13,6 +10,11 @@
 }
 .edit{
     background-image: url('./assets/img/edit.svg');
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.save{
+    background-image: url('./assets/img/save.svg');
     background-repeat:no-repeat;
     background-position: center;
 }

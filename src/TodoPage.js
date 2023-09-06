@@ -8,9 +8,9 @@ const TodoPage = ({todos, remove, setTodos}) => {
     return (
         <div className='pt-9'>
             <div className='mx-auto mb-9 w-70_5 text-xl text-white font-bold'>
-                <button className={`w-28_5 h-11 border-2 ${status === 'all' ? 'bg-lightgray100' : 'bg-lightgray50'}`} onClick={e => setStatus('all')}>all</button>
-                <button className={`w-28_5 h-11 border-2 ${status === 'todo' ? 'bg-lightgray100' : 'bg-lightgray50'}`} onClick={e => setStatus('todo')}>todo</button>
-                <button className={`w-28_5 h-11 border-2 ${status === 'done' ? 'bg-lightgray100' : 'bg-lightgray50'}`} onClick={e => setStatus('done')}>done</button>
+                <button className={`w-28_5 h-11 border-2 ${status === 'all' ? 'bg-lightgray100' : 'bg-lightgray50'}`} onClick={e => setStatus('all')}>ALL</button>
+                <button className={`w-28_5 h-11 border-2 ${status === 'todo' ? 'bg-lightgray100' : 'bg-lightgray50'}`} onClick={e => setStatus('todo')}>TODO</button>
+                <button className={`w-28_5 h-11 border-2 ${status === 'done' ? 'bg-lightgray100' : 'bg-lightgray50'}`} onClick={e => setStatus('done')}>DONE</button>
             </div>
             {todos.filter(todo => {
                 if(status === "all") return todo;
